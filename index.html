@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PTT Procurement Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif;
+    }
+    body {
+      display: flex; background: #f4f6fa; height: 100vh;
+    }
+    .sidebar {
+      width: 220px; background: #101e3d; color: white; padding: 20px;
+    }
+    .sidebar h2 {
+      margin-bottom: 30px;
+    }
+    .sidebar nav a {
+      display: block; color: #cbd5e1; text-decoration: none;
+      margin-bottom: 15px; padding: 10px; border-radius: 8px;
+    }
+    .sidebar nav a.active, .sidebar nav a:hover {
+      background: #1e2f55; color: #fff;
+    }
+    .main {
+      flex: 1; padding: 30px;
+    }
+    .header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 30px;
+    }
+    .card-container {
+      display: flex; gap: 20px; flex-wrap: wrap;
+    }
+    .card {
+      flex: 1 1 200px;
+      background: white; padding: 20px; border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .card h3 {
+      font-size: 14px; color: #555;
+    }
+    .card .value {
+      font-size: 28px; font-weight: bold; color: #1a1a1a;
+    }
+    .table-section {
+      margin-top: 30px;
+    }
+    table {
+      width: 100%; border-collapse: collapse; margin-top: 10px;
+      background: white; border-radius: 12px; overflow: hidden;
+    }
+    th, td {
+      padding: 12px 16px; border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+    }
+    th {
+      background: #f9fafb;
+      font-weight: 600;
+    }
+    .btn {
+      display: inline-block;
+      background: #2563eb; color: white;
+      padding: 10px 16px; border-radius: 8px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>🔷 PTT</h2>
+    <nav>
+      <a href="#">🏠 Home</a>
+      <a class="active" href="#">📦 Procurement</a>
+      <a href="#">💰 Financials</a>
+      <a href="#">📁 Projects</a>
+      <a href="#">🚚 Logistics</a>
+    </nav>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h1>Procurement Dashboard</h1>
+      <a href="#" class="btn">Create Requisition</a>
+    </div>
+
+    <div class="card-container">
+      <div class="card">
+        <h3>Purchase Requisitions</h3>
+        <div class="value">12</div>
+      </div>
+      <div class="card">
+        <h3>Purchase Orders</h3>
+        <div class="value">8</div>
+      </div>
+      <div class="card">
+        <h3>Supplier Sites</h3>
+        <div class="value">32</div>
+      </div>
+      <div class="card">
+        <h3>Purchase Agreements</h3>
+        <div class="value">5</div>
+      </div>
+    </div>
+
+    <div class="table-section">
+      <h2>Recent Requisitions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Requisition</th>
+            <th>Description</th>
+            <th>Requester</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PR-00351</td>
+            <td>Office Supplies</td>
+            <td>Vichai S.</td>
+            <td>22/04/2024</td>
+            <td>25,000.00</td>
+            <td>Approved</td>
+          </tr>
+          <tr>
+            <td>PR-00348</td>
+            <td>IT Equipment</td>
+            <td>Ananya T.</td>
+            <td>19/04/2024</td>
+            <td>250,000.00</td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <td>PR-00357</td>
+            <td>Military Supplies</td>
+            <td>Hongan H.</td>
+            <td>18/04/2024</td>
+            <td>70,000.00</td>
+            <td>Pending</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+</body>
+</html>
