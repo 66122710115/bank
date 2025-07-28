@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>PTT ERP - Report Module</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Inter", sans-serif;
+            }
+            body {
+                display: flex;
+                background: #f4f6fa;
+                height: 100vh;
+            }
+            .sidebar {
+                width: 220px;
+                background: #101e3d;
+                color: white;
+                padding: 20px;
+            }
+            .sidebar h2 {
+                margin-bottom: 30px;
+            }
+            .sidebar nav a {
+                display: block;
+                color: #cbd5e1;
+                text-decoration: none;
+                margin-bottom: 15px;
+                padding: 10px;
+                border-radius: 8px;
+            }
+            .sidebar nav a.active,
+            .sidebar nav a:hover {
+                background: #1e2f55;
+                color: #fff;
+            }
+            .main {
+                flex: 1;
+                padding: 30px;
+                overflow-y: auto;
+            }
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 30px;
+            }
+            h1 {
+                font-weight: 600;
+                color: #101e3d;
+            }
+            .filters {
+                margin-bottom: 20px;
+                display: flex;
+                gap: 15px;
+                align-items: center;
+            }
+            label {
+                font-weight: 600;
+                color: #555;
+            }
+            input[type="date"],
+            select {
+                padding: 6px 10px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+                font-size: 14px;
+            }
+            button {
+                padding: 8px 16px;
+                background-color: #2563eb;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: 600;
+            }
+            button:hover {
+                background-color: #1a44bb;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                background: white;
+                border-radius: 12px;
+                overflow: hidden;
+            }
+            th,
+            td {
+                padding: 12px 16px;
+                border-bottom: 1px solid #e5e7eb;
+                text-align: left;
+                font-size: 14px;
+                color: #333;
+            }
+            th {
+                background: #f9fafb;
+                font-weight: 600;
+            }
+            tbody tr:hover {
+                background: #f1f5f9;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="sidebar">
+            <h2>🔷 PTT</h2>
+            <nav>
+                <a href="#" id="home-page">🏠 Home</a>
+                <a href="./index.html" id="procurement-page">📦 Procurement</a>
+                <a href="#" id="financial-page">💰 Financials</a>
+                <a href="#" id="project-page">📁 Projects</a>
+                <a href="#" id="logistic-page">🚚 Logistics</a>
+                <a href="./report.html" id="report-page">📊 Report</a>
+            </nav>
+        </div>
+
+        <div class="main">
+            <div class="header">
+                <h1>Report Module</h1>
+                <button>Export CSV</button>
+            </div>
+
+            <div class="filters">
+                <label for="report-type">Report Type:</label>
+                <select id="report-type" name="report-type">
+                    <option value="purchase">Purchase Report</option>
+                    <option value="inventory">Inventory Report</option>
+                    <option value="finance">Financial Report</option>
+                </select>
+
+                <label for="from-date">From:</label>
+                <input type="date" id="from-date" name="from-date" />
+
+                <label for="to-date">To:</label>
+                <input type="date" id="to-date" name="to-date" />
+
+                <button>Filter</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Report ID</th>
+                        <th>Title</th>
+                        <th>Created By</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>RPT-001</td>
+                        <td>Monthly Purchase Summary</td>
+                        <td>Somchai P.</td>
+                        <td>01/07/2025</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>RPT-002</td>
+                        <td>Inventory Check July</td>
+                        <td>Jintana W.</td>
+                        <td>10/07/2025</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <td>RPT-003</td>
+                        <td>Quarterly Financial Overview</td>
+                        <td>Wichai S.</td>
+                        <td>15/07/2025</td>
+                        <td>Pending</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+
+    <script src="./scripts/script.js"></script>
+</html>
